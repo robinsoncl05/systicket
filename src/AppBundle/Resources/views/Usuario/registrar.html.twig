@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <header class="main-box-header clearfix">
+        <h2 class="box-title">Registro de Usuarios</h2>
+    </header>
+    <div class="main-box-body clearfix" id="formularioregistros">
+        <form name="registroU" id="registroU" method="POST">
+            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label>Nombres</label>
+                <input type="hidden" name="usuario_id" id="usuario_id">
+                <input type="text" name="nombres" id="nombres" class="form-control" placeholder="Nombres..." required>
+            </div>
+            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label>Apellidos</label>
+                <input type="text" name="apellidos" id="apellidos" class="form-control" placeholder="Apellidos" required>
+            </div>
+            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label>Nombre de Usuario</label>
+                <input type="text" name="username" id="username" class="form-control" placeholder="Username" required>
+            </div>
+            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label>Contraseña</label>
+                <input type="password" name="password" id="password" class="form-control" required>
+            </div>
+            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label>Tipo de Usuario</label>
+                <input type="text" name="tipoUsuario" id="tipoUsuario" class="form-control">
+            </div>
+            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label>Rol</label>
+                <input type="text" name="role" id="role" class="form-control" placeholder="Rol" required>
+            </div>
+            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label>Estado</label>
+                <select class="form-control" id="estado">
+                    <option>Activo</option>
+                    <option>Inactivo</option>
+                </select>
+            </div>
+            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label>Fecha</label>
+                <input type="datetime-local" name="fechaRegistro" id="fechaRegistro" class="form-control">
+            </div>
+            <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>
+                <a href="../usuario"><button class="btn btn-danger" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</button></a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

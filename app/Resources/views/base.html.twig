@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<!-- Mirrored from www.ravijaiswal.com/Afro-v.1.1/tables.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 19 Mar 2017 03:12:20 GMT -->
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<title>SysTicket - Sistema de Gestión de Tickets de Soporte Tecnico</title>
+<!-- Estilos Css -->
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap/bootstrap.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap-select.min.css')}}"> 
+<script src="{{ asset('assets/js/demo-rtl.js')}}"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/libs/font-awesome.css')}}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/libs/nanoscroller.css')}}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/compiled/theme_styles.css')}}"/>
+<link rel="stylesheet" href="{{ asset('assets/css/libs/daterangepicker.css" type="text/css')}}"/>
+<link type="image/x-icon" href="{{ asset('assets/img/favicon.png')}}" rel="shortcut icon"/>
+<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+<script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300|Titillium+Web:200,300,400' rel='stylesheet' type='text/css'>
+<!--[if lt IE 9]>
+    <script src="{{  asset('assets/js/html5shiv.js') }}"></script>
+    <script src="{{  asset('assets/js/respond.min.js') }}"></script>
+  <![endif]-->
+<!-- DATATABLES -->
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets/datatables/jquery.dataTables.min.css')}}">    
+  <link href="{{ asset('assets/datatables/buttons.dataTables.min.css" rel="stylesheet"')}}">
+  <link href="{{ asset('assets/datatables/responsive.dataTables.min.css" rel="stylesheet"')}}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap-select.min.css"')}}"
+  
+</head>
+<body>
+<div id="theme-wrapper">
+<header class="navbar" id="header-navbar">
+<div class="container">
+<a href="" id="logo" class="navbar-brand">
+<span>SysTicket</span>
+<img src="{{asset('assets/img/logo-black.png')}}" alt="" class="normal-logo logo-black"/>
+<img src="{{asset('assets/img/logo-small.png')}}" alt="" class="small-logo hidden-xs hidden-sm hidden"/>
+</a>
+<div class="clearfix">
+<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="fa fa-bars"></span>
+</button>
+
+<div class="nav-no-collapse pull-right" id="header-nav">
+<ul class="nav navbar-nav pull-right">
+
+<li class="dropdown profile-dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+<img src="{{asset('assets/img/samples/scarlet-159.png')}}" alt=""/>
+<span class="hidden-xs">Jose Mella G.</span> <b class="caret"></b>
+</a>
+<ul class="dropdown-menu">
+<li><a href="user-profile.html"><i class="fa fa-user"></i>Profile</a></li>
+<li><a href="#"><i class="fa fa-cog"></i>Settings</a></li>
+<li><a href="#"><i class="fa fa-envelope-o"></i>Messages</a></li>
+<li><a href="#"><i class="fa fa-power-off"></i>Logout</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</header>
+<div id="page-wrapper" class="container">
+<div class="row">
+<div id="nav-col">
+<section id="col-left" class="col-left-nano">
+<div id="col-left-inner" class="col-left-nano-content">
+<div id="user-left-box" class="clearfix hidden-sm hidden-xs dropdown profile2-dropdown">
+<img alt="" src="{{asset('assets/img/samples/scarlet-159.png')}}"/>
+<div class="user-box">
+<span class="name">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+Jose Mella G.
+<i class="fa fa-angle-down"></i>
+</a>
+<ul class="dropdown-menu">
+<li><a href="user-profile.html"><i class="fa fa-user"></i>Profile</a></li>
+<li><a href="#"><i class="fa fa-cog"></i>Settings</a></li>
+<li><a href="#"><i class="fa fa-envelope-o"></i>Messages</a></li>
+<li><a href="#"><i class="fa fa-power-off"></i>Logout</a></li>
+</ul>
+</span>
+<span class="status">
+<i class="fa fa-circle"></i> Online
+</span>
+</div>
+</div>
+<div class="collapse navbar-collapse navbar-ex1-collapse" id="sidebar-nav">
+<ul class="nav nav-pills nav-stacked">
+<li>
+<a href="{{ path('homepage') }}">
+<i class="fa fa-dashboard"></i>
+<span>Escritorio</span>
+</a>
+</li>
+<li>
+<a href="#" class="dropdown-toggle">
+<i class="fa fa-desktop"></i>
+<span>Configuraciones</span>
+<i class="fa fa-angle-right drop-icon"></i>
+</a>
+<ul class="submenu">
+<li>
+<a href="ui-elements.html">
+Empresa
+</a>
+</li>
+<li>
+<a href="notifications.html">
+Roles
+</a>
+</li>
+<li>
+<a href="modals.html">
+Permisos
+</a>
+</li>
+</ul>
+</li>
+
+
+<li>
+<a href="#" class="dropdown-toggle">
+<i class="fa fa-table"></i>
+<span>Adminitrativo</span>
+<i class="fa fa-angle-right drop-icon"></i>
+</a>
+<ul class="submenu">
+<li>
+<a href="{{ path('crear_ticket')}}">
+Tickets
+</a>
+</li>
+<li>
+<a href="{{ path('crear_nota') }}">
+Notas
+</a>
+</li>
+<li>
+<a href="{{ path('lista_usuario') }}">
+Usuarios
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#" class="dropdown-toggle">
+<i class="fa fa-money"></i>
+<span>Pagos</span>
+<i class="fa fa-angle-right drop-icon"></i>
+</a>
+<ul class="submenu">
+<li>
+<a href="email-inbox.html">
+Registrar pago
+</a>
+</li>
+<li>
+<a href="email-detail.html">
+Consulta de pagos
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#" class="dropdown-toggle">
+<i class="fa fa-copy"></i>
+<span>Académico</span>
+<i class="fa fa-angle-right drop-icon"></i>
+</a>
+<ul class="submenu">
+<li>
+<a href="calendar.html">
+Alumnos
+</a>
+</li>
+<li>
+<a href="gallery.html">
+Especialidades
+</a>
+</li>
+<li>
+<a href="gallery-v2.html">
+Módulos
+</a>
+</li>
+<li>
+<a href="projects.html">
+Semestres
+</a>
+</li>
+<li>
+<a href="pricing.html">
+Unidades Didácticas
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#" class="dropdown-toggle">
+<i class="fa fa-bar-chart-o"></i>
+<span>Consultas</span>
+<i class="fa fa-angle-right drop-icon"></i>
+</a>
+<ul class="submenu">
+<li>
+<a href="graphs-morris.html">
+Consulta de ingresos diarios
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<div id="nav-col-submenu"></div>
+</div>
+<!-- Inicio Wrapper -->
+<div id="content-wrapper">
+<div class="row">
+<div class="col-lg-12">
+<!-- Fin header PHP -->
+
+
+<!-- Inicio Contenido PHP-->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="main-box clearfix">
+      {% block body %}{% endblock %}
+      {% block javascript %}{% endblock %} 
+    </div>
+  </div>
+</div>
+<!-- Fin Contenido PHP-->
+
+<!-- Inicio footer PHP -->
+</div>
+</div>
+<!-- Fin row -->
+
+<footer id="footer-bar" class="row">
+<p id="footer-copyright" class="col-xs-12">
+MESCYT - ITLA - Todos los derechos reservados.
+</p>
+</footer>
+</div>
+<!-- Fin content wrapper-->
+
+</div>
+</div>
+</div>
+<!-- JavaScripts --> 
+<script src="{{ asset('assets/js/demo-skin-changer.js')}}"></script>  
+<script src="{{ asset('assets/js/jquery.js')}}"></script>
+<script src="{{ asset('assets/js/bootstrap.js')}}"></script>
+<script src="{{ asset('assets/js/jquery.nanoscroller.min.js')}}"></script>
+<script src="{{ asset('assets/js/demo.js')}}"></script>  
+ 
+<script src="{{ asset('assets/js/moment.min.js')}}"></script>
+<script src="{{ asset('assets/js/daterangepicker.js')}}"></script>
+ 
+<script src="{{ asset('assets/js/scripts.js')}}"></script>
+<script src="{{ asset('assets/js/pace.min.js')}}"></script>
+
+<!-- DATATABLES -->
+<script src="{{ asset('assets/datatables/jquery.dataTables.min.js')}}"></script>    
+<script src="{{ asset('assets/datatables/dataTables.buttons.min.js')}}"></script>
+<script src="{{ asset('assets/datatables/buttons.html5.min.js')}}"></script>
+<script src="{{ asset('assets/datatables/buttons.colVis.min.js')}}"></script>
+<script src="{{ asset('assets/datatables/jszip.min.js')}}"></script>
+<script src="{{ asset('assets/datatables/pdfmake.min.js')}}"></script>
+<script src="{{ asset('assets/datatables/vfs_fonts.js')}}"></script> 
+
+<script src="{{ asset('assets/js/bootbox.min.js')}}"></script> 
+<script src="{{ asset('assets/js/bootstrap-select.min.js')}}"></script>  
+<script type="text/javascript" src="{{ asset('assets/js/concepto.js')}}"></script>
+ 
+</body>
+
+</html>
+<!-- Fin footer PHP -->
