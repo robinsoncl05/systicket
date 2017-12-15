@@ -19,29 +19,13 @@ use Symfony\Component\Form\Form;
  */
 class UsuarioController extends Controller
 {
-    // APIs
-
-    /**
-     * @Route("/", name="lista_usuario")
-     * @Method("GET")
-     * @param Request $request
-     * @return JsonResponse
-     */
-    public function indexAction(Request $request)
+     public function indexAction(Request $request)
     {
         return $this->render('AppBundle:Usuario:usuario.html.twig');
-        //$usuario = $this->getDoctrine()->getRepository(Usuario::class)->findAll();
-        //$usuarioD = json_decode($this->get('serializer')->serialize($usuario, 'json'), true);
 
-        //return new JsonResponse($usuarioD);
     }
 
-    /**
-     * @Route("/registrar", name="registrar", options={"expose"=true})
-     * @param Request $request
-     * @Method("GET")
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
+
     public function newAction(Request $request){
 
         $usuario = new Usuario();
@@ -53,26 +37,14 @@ class UsuarioController extends Controller
         ));
     }
 
-    /**
-     * @Route("/{id}", name="get_usuario", requirements={"id"="\d+"} )
-     * @Method("GET")
-     * @param Request $request
-     * @param Usuario $usuario
-     * @return JsonResponse
-     */
+
     public function getUsuario(Request $request, Usuario $usuario)
     {
         $usuarioJ = json_decode($this->get('serializer')->serialize($usuario, 'json'), true);
         return new JsonResponse($usuarioJ);
     }
 
-    /**
-     * @Route("/", name="crear_usuario", options={"expose"=true})
-     * @param Request $request
-     * @Method({"post"})
-     *
-     * @return JsonResponse
-     */
+
     public function crearUsuario(Request $request)
     {
 
